@@ -1,0 +1,7 @@
+aws eks create-nodegroup \
+-- cluster-name bottlerocket-eks-cluster \
+-- node-group-name bottlerocket-ng \
+--scaling-config desiredCapacity=1,maxCapacity=2,minCapacity=1 \
+--instance-type <desired-instance-type> \
+-- ami-type <bottlerocket-ami-id> \
+-- kubernetes-version <desired-kubnetes-verion>
