@@ -1,5 +1,5 @@
 aws eks create-cluster \
--- name Bottlerocket-eks-cluster \
+-- name bottlerocket-eks-cluster \
 -- version <desired kubernetes version> \
 --role-arn <Cluter-role-arn> \
 --region  <aws-region>
