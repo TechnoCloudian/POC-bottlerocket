@@ -4,4 +4,4 @@ kind: ClusterConfig
 
 metadata:
   name: bottlerocket-cluster
-  region: us-east-1
+  region: eu-west-1

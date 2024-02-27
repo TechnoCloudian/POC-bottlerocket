@@ -1,0 +1,18 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: bottlerocket-cluster
+  region: eu-west-1
+  version: 1.25
+
+managedNodeGroups:
+  - name: bottlerocket-nodegroup
+    instanceType: t2.micro
+    minSize: 1
+    maxSize: 3
+    desiredCapacity: 2
+    amiFamily: Bottlerocket
+    tags:
+      nodegroup-type: Bottlerocket
