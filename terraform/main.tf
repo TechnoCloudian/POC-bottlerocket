@@ -18,15 +18,15 @@ resource "aws_iam_role_policy_attachment" "cluster_role_policy" {
   policy_arn = aws_iam_policy.cluster_policy.arn
 }
 
-# Bottlerocket AMI (replace with desired region and architecture)
+# Bottlerocket AMI (replace name /ami with desired region and architecture where it is available, for example; /aws/eks/optimized/ami/x86_64/amazon-eks-optimized-ami-bottlerocket-x86_64-6.0.0-1.el8.el7/latest)
 data "aws_ssm_parameter" "bottlerocket_ami" {
-  name = "/aws/eks/optimized/ami/x86_64/amazon-eks-optimized-ami-bottlerocket-x86_64-6.0.0-1.el8.el7/latest"
+  name = "/aws/eks/optimized/ami/x86_64/amazon-eks-optimized-ami-bottlerocket-x86_64-xxxxxxxxxx"
 }
 
 # Launch Template for Bottlerocket Nodes
 resource "aws_launch_template" "bottlerocket_lt" {
   name = "bottlerocket-lt"
   image_id         = data.aws_ssm_parameter.bottlerocket_ami.value
-  instance_type    = "t3.medium" # Replace with desired instance type
+  instance_type    = "t2.micro" # Replace with desired instance type
   security_group_ids = [aws_security_group.eks_sg.id]
 }

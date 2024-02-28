@@ -1,4 +1,4 @@
-# IAM Policy for Cluster
+# IAM Policy for Cluster make changes that suits the requirments. 
 resource "aws_iam_policy" "cluster_policy" {
   name = "eks-cluster-policy"
   policy = <<EOF
