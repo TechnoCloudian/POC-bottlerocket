@@ -1,4 +1,4 @@
-# Security Group for EKS Cluster
+# Security Group for EKS Cluster need modification according to ingress/egress
 resource "aws_security_group" "eks_sg" {
   name = "eks-sg"
   description = "Security group for bottlerocket EKS cluster"
